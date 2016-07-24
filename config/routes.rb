@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'consult/law'
 
+  post 'consult/create'
+
   get 'home/index'
 
   root 'home#index'
