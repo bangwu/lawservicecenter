@@ -1,0 +1,30 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>时间</th>
+    <th>名称</th>
+    <th>地址</th>
+    <th>联系人</th>
+    <th>联系电话</th>
+    <th>咨询问题</th>
+    <th>附件</th>
+    <th>问题类型</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @consults.each do |consult| %>
+      <tr>
+        <th scope="row"><%= link_to consult.id, consult_show_path(consult) %></th>
+        <td><%= consult.time %></td>
+        <td><%= consult.title %></td>
+        <td><%= consult.address %></td>
+        <td><%= consult.contact %></td>
+        <td><%= consult.phone %></td>
+        <td><%= consult.question %></td>
+        <td><%= link_to 'download', consult.attachment.url %></td>
+        <td><%= consult.question_type %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

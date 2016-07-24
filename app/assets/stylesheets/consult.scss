@@ -1,3 +1,36 @@
 // Place all the styles related to the consult controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.consult{
+
+  padding-bottom: 0 !important;
+
+  .type{
+    visibility: hidden;
+  }
+
+  .control-group{
+    margin: 10px;
+    .control-label{
+      display: inline-block;
+      font-size: 36px;
+      color: #ffffff;
+      min-width: 180px;
+    }
+    .control-item{
+      display: inline-block;
+      font-size: 24px;
+    }
+
+    .control-label-area{
+      font-size: 36px;
+      color: #ffffff;
+      min-width: 180px;
+    }
+    .control-area{
+      font-size: 24px;
+      width: 440px;
+      height: 160px;
+    }
+  }
+}

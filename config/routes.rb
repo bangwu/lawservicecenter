@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+
+  get 'consults', to: 'consult#index'
+
+  get 'consults/:id', to: 'consult#show', as: 'consult_show'
+
   get 'consult/complain'
 
   get 'consult/feedback'
 
-  get 'consult/flow'
+  get 'consult/flow', to: 'consult#law'
 
   get 'consult/justice'
 
