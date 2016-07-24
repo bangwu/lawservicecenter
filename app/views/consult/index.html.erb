@@ -15,14 +15,18 @@
   <tbody>
   <% @consults.each do |consult| %>
       <tr>
-        <th scope="row"><%= link_to consult.id, consult_show_path(consult) %></th>
+        <th scope="row"><%= link_to '查看', consult_show_path(consult) %></th>
         <td><%= consult.time %></td>
         <td><%= consult.title %></td>
         <td><%= consult.address %></td>
         <td><%= consult.contact %></td>
         <td><%= consult.phone %></td>
         <td><%= consult.question %></td>
-        <td><%= link_to 'download', consult.attachment.url %></td>
+        <td>
+          <% if consult.attachment %>
+            <%= link_to '下载', consult.attachment.url %>
+          <% end %>
+        </td>
         <td><%= consult.question_type %></td>
       </tr>
   <% end %>

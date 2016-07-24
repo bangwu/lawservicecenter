@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @consult = Consult.find(params[:consult_id])
     @comment = @consult.comments.create(comment_params)

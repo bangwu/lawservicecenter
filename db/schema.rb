@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160724052708) do
   end
 
   create_table "consults", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "question_type"
     t.string   "title"
     t.datetime "time"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160724052708) do
     t.string   "member"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_consults_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

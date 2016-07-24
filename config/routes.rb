@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'consult/feedback'
 
-  get 'consult/flow', to: 'consult#law'
+  get 'consult/flow'
 
   get 'consult/justice'
 
@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   post '/consults/:consult_id/comments', to: 'comments#create', as: 'consult_comments'
 
   devise_for :users, controllers: {
-      sessions: 'users/sessions'
+      sessions: 'users/sessions',
+      registrations: 'users/registrations',
+      passwords: 'users/passwords'
   }
 end

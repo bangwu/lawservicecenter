@@ -1,55 +1,58 @@
+<%= render 'header' %>
 <div class="container home">
   <div class="left">
     <%= image_tag('left_logo.png', class: 'logo') %>
   </div>
   <div class="right consult">
-    <div class="type">
-      <%= @consult.question_type %>
-    </div>
-    <div class="control-group">
-      <div class="control-label">时间:<%= @consult.time %></div>
-    </div>
-    <div class="control-group">
-      <div class="control-label">名称:<%= @consult.title %></div>
+    <div class="consult-show">
+      <h1 class="title">
+        <%= @consult.question_type %>
+      </h1>
+      <div class="control-group">
+        <div class="control-label">时间:<%= @consult.time %></div>
+      </div>
+      <div class="control-group">
+        <div class="control-label">名称:<%= @consult.title %></div>
 
-    </div>
+      </div>
 
-    <div class="control-group">
-      <div class="control-label">地址:<%= @consult.address %></div>
+      <div class="control-group">
+        <div class="control-label">地址:<%= @consult.address %></div>
 
-    </div>
+      </div>
 
-    <div class="control-group">
-      <div class="control-label">联系人:<%= @consult.contact %></div>
+      <div class="control-group">
+        <div class="control-label">联系人:<%= @consult.contact %></div>
 
-    </div>
+      </div>
 
-    <div class="control-group">
-      <div class="control-label">联系电话:<%= @consult.phone %></div>
+      <div class="control-group">
+        <div class="control-label">联系电话:<%= @consult.phone %></div>
 
-    </div>
+      </div>
 
-    <div class="control-group">
-      <div class="control-label-area">咨询问题:<%= @consult.question %></div>
+      <div class="control-group">
+        <div class="control-label-area">咨询问题:<%= @consult.question %></div>
 
-    </div>
+      </div>
 
-    <div class="control-group">
-      <div class="control-label-area">附件<%= link_to '下载', @consult.attachment.url %></div>
-    </div>
-    <%= render @consult.comments %>
-    <%= form_for([@consult, @consult.comments.build]) do |f| %>
-        <p>
-          <%= f.label :body %><br>
-          <%= f.text_area :body %>
-        </p>
+      <div class="control-group">
+        <div class="control-label-area">附件<%= link_to '下载', @consult.attachment.url %></div>
+      </div>
+      <%= render @consult.comments %>
+      <%= form_for([@consult, @consult.comments.build], html: {class: 'comment-form'}) do |f| %>
+        <div class="control-group">
+          <div class="control-label-area">答复意见:</div>
+          <%= f.text_area :body, class: 'comment-body' %>
+        </div>
         <div class="control-group">
           <div class="control-label-area">附件</div>
           <%= f.file_field :attachment, class: 'btn btn-default' %>
         </div>
-        <p>
-          <%= f.submit %>
-        </p>
+          <div class="form-group">
+            <%= f.submit '提交' ,class: 'btn btn-lg btn-default btn-block'%>
+          </div>
     <% end %>
+    </div>
   </div>
 </div>

@@ -4,7 +4,13 @@
 .consult{
 
   padding-bottom: 0 !important;
+  .consult-form{
+    width: 555px;
 
+    .consult-title{
+      text-align: center;
+    }
+  }
   .type{
     visibility: hidden;
   }
@@ -20,6 +26,7 @@
     .control-item{
       display: inline-block;
       font-size: 24px;
+      width: 350px;
     }
 
     .control-label-area{
@@ -29,8 +36,12 @@
     }
     .control-area{
       font-size: 24px;
-      width: 440px;
+      width: 535px;
       height: 160px;
     }
+  }
+
+  .consult-show{
+    width: 650px;
   }
 }

@@ -1,4 +1,6 @@
 class ConsultController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @consults = Consult.all
   end
@@ -39,8 +41,9 @@ class ConsultController < ApplicationController
 
   def create
     @consult = Consult.new(consult_params)
+    @consult.user = current_user
     @consult.save
-    redirect_to consult_law_path
+    redirect_to consult_show_path(@consult)
   end
 
   private
