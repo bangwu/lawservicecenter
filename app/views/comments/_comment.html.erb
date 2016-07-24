@@ -1,0 +1,9 @@
+<div class="control-group">
+  <div class="control-label-area">答复意见:<%= comment.body %></div>
+</div>
+<div class="control-group">
+  <div class="control-label-area">答复人:<%= comment.user.email %></div>
+</div>
+<div class="control-group">
+  <div class="control-label-area">附件<%= link_to '下载', comment.attachment.url %></div>
+</div>

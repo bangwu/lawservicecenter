@@ -1,6 +1,7 @@
 class CreateConsults < ActiveRecord::Migration[5.0]
   def change
     create_table :consults do |t|
+      t.references :user
       t.integer :question_type
       t.string :title
       t.datetime :time

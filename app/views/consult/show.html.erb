@@ -37,6 +37,19 @@
     <div class="control-group">
       <div class="control-label-area">附件<%= link_to '下载', @consult.attachment.url %></div>
     </div>
-
+    <%= render @consult.comments %>
+    <%= form_for([@consult, @consult.comments.build]) do |f| %>
+        <p>
+          <%= f.label :body %><br>
+          <%= f.text_area :body %>
+        </p>
+        <div class="control-group">
+          <div class="control-label-area">附件</div>
+          <%= f.file_field :attachment, class: 'btn btn-default' %>
+        </div>
+        <p>
+          <%= f.submit %>
+        </p>
+    <% end %>
   </div>
 </div>
