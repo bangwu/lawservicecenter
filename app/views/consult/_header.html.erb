@@ -1,1 +1,26 @@
-<%= link_to '退出登录', destroy_user_session_path, method: 'delete' %>
+<nav class="navbar navbar-default custom-nav">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "主页", root_path, class: 'navbar-brand nav-item' %>
+      <%= link_to "咨询列表", consults_path, class: 'navbar-brand nav-item' %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-item' %></li>
+        <% else %>
+            <li><%= link_to 'Login', new_user_session_path, class: 'nav-item' %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -27,6 +27,7 @@
       display: inline-block;
       font-size: 24px;
       width: 350px;
+      color: black;
     }
 
     .control-label-area{
@@ -38,10 +39,27 @@
       font-size: 24px;
       width: 535px;
       height: 160px;
+      color: black;
     }
   }
 
   .consult-show{
     width: 650px;
   }
+}
+
+.custom-nav{
+  margin-bottom: 0;
+  color: #ffffff !important;
+  background-color: #244935;
+  border: none;
+  border-radius: 0;
+
+  .nav-item{
+    color: #ffffff !important;
+  }
+}
+
+.custom-tab{
+  color: #ffffff;
 }
